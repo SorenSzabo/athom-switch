@@ -1,0 +1,14 @@
+name: Build ESPHome Firmware
+on:
+  push:
+    paths:
+      - 'athom-switch.yaml'
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Compile ESPHome
+        uses: esphome/build-action@v7
+        with:
+          yaml-file: athom-sw02.yaml
